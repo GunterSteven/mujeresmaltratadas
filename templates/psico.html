@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicologos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js.map') }}"></script>
+</head>
+<body>
+    <p class="text-uppercase display-6 text-center" style="font-family: Courier New; ">Nuestros psicologos</p>
+    <hr>
+   
+    <div style="background-color: #F4BEEE;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          {% if (session['tipo']==1) or (session['tipo']==3) %}
+            <a class="navbar-brand" href="{{ url_for('index') }}">Inicio</a>
+          {%else%}
+              <a class="navbar-brand" href="{{ url_for('p_login') }}">Login</a>
+          {%endif%}
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% if (session['tipo']==1) or(session['tipo']==2) and (session['tipo']==3) %}
+                      {{ session['usuario'] }}
+                    {%else%}
+                      More
+                    {%endif%}
+                    </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  {% if (session['tipo']==1) %}
+                    <li><a class="dropdown-item" href="{{ url_for('agcita') }}">Agendar cita</a></li>
+                    {%else%}
+                    <li><a class="dropdown-item" href="{{ url_for('p_register') }}">Registrate</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('p_login') }}">login</a></li>
+                    {%endif%}
+                    {% if (session['tipo']==1) or (session['tipo']==2) or (session['tipo']==3) %}
+                    <li><a class="dropdown-item text-dark bi-door-open" href="{{ url_for('logout') }}"> Cerrar sesión</a></li>
+                    {%endif%}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     <section class= "section">
+      <div class="colums">
+        <h3>Psicologos Disponibles</h3>
+        <table>
+          <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Edad</th>
+            <th>Ciudad</th>
+          </tr>
+          <tbody>
+            
+            
+            </tbody>
+
+
+        </table>
+      </div>
+     </section>
+
+
+
+
+        </div>
+        </body>
+        <foorter>
+          <div>
+           <div style="background-color: #f7e7f5;" class="text-center">
+             <div class="row">
+               <div class="col-lg-4  col-md-4  col-ms-4  col-4 ">
+                   <img src="{{ url_for('static', filename='img/icono.jpg') }}" style="width: 10%;">
+                   <p class="lead ">Kellyromero01</p>
+                   </div>
+                   <div class="col-lg-4  col-md-4 col-ms-4  col-4   text-center">
+             <img src="{{ url_for('static', filename='img/icono2.png') }}" style="width: 10%;">
+             <p class="lead ">3229287747</p>
+                   </div>
+             <div class="col-lg-4  col-md-4 col-ms-4  col-4   text-center">
+             <img src="{{ url_for('static', filename='img/icono3.png') }}" style="width: 15%;">
+               <p class="lead ">Kellyromero@gmail.com</p>
+                  </div>
+                   
+         </foorter> 
+
+</html>

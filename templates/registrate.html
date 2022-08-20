@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-grid.css') }}">
+
+    
+</head>
+<body>
+   <p class="text-uppercase display-6 text-center" style="font-family: Courier New; ">Registrate</p>
+  <hr>
+ 
+  <div style="background-color: #F4BEEE;">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     
+       <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+       
+       <a class="navbar-brand" href="{{ url_for('p_login') }}">login</a>
+       
+      </nav>
+   <div class="container-sm shadow p-3 mb-5 bg-white rounded col-lg-6 col-md-3 col-ms-3 col-3 "><center> <img src="{{ url_for('static', filename='img/juntas.gif') }}" alt="" class="d-block w-25"></center>
+
+    <form action="/register" id ="formulario" name = "formulario" method="POST">
+      
+          <label for="inputEmail4">Nombres</label>
+          <input type="text" class="form-control" name="txtnombre" placeholder="Andrea" required="" />
+
+          <label for="Apellido">Apellidos</label>
+          <input type="text" class="form-control" name="txtapellido" placeholder="Andrea" required="" />
+      
+      
+         <label for="inputAddress2">Telefono</label>
+         <input type="text" class="form-control" name="contact_phone" placeholder="345678967" required="" />
+        
+         <label for="inputEmail4">Correo</label>
+          <input type="email" class="form-control" name="txtusurio" placeholder="Andrea@gmail.com" required="" />
+
+         <label for="inputEmail4">Nombre de usuario</label>
+         <input type="text" class="form-control" name="txtnameuse" placeholder="Andrea123" required="" />
+      
+      
+         <label for="contra">Contraseña</label>
+         <input type="password" class="form-control" name="txtpassword" placeholder="!%345678967" required="" />
+      
+      
+        
+       
+        
+        
+          <label for="inputState">State</label>
+          <select name="id_estado" class="form-control">
+            <option value="1">Soltera</option>
+            <option value="2">En una relacion</option>
+          </select>
+        
+        
+              
+      
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+          
+      
+      
+      <center>              <input class="btn btn-outline-dark" type="submit" name="registrate" value="Ingresar">
+</center>
+    </form>
+   </div>
+   <foorter>
+    <div>
+     <div style="background-color: #f7e7f5;" class="text-center">
+       <div class="row">
+         <div class="col-lg-4  col-md-4  col-ms-4  col-4 ">
+             <img src="{{ url_for('static', filename='img/icono.jpg') }}" style="width: 10%;">
+             <p class="lead ">Kellyromero01</p>
+             </div>
+             <div class="col-lg-4  col-md-4 col-ms-4  col-4   text-center">
+       <img src="{{ url_for('static', filename='img/icono2.png') }}" style="width: 10%;">
+       <p class="lead ">3229287747</p>
+             </div>
+       <div class="col-lg-4  col-md-4 col-ms-4  col-4   text-center">
+       <img src="{{ url_for('static', filename='img/icono3.png') }}" style="width: 15%;">
+         <p class="lead ">Kellyromero@gmail.com</p>
+            </div>
+             
+   </foorter>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
